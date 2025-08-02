@@ -1,0 +1,34 @@
+name: CI Build for DevOps Assignment
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '9.0.x'
+
+      - name: Build HelloWorldApp
+        run: dotnet publish ./src/HelloWorldApp -c Release -r win-x64 --self-contained true -o ./publish/HelloWorldApp
+
+      - name: Build WebMonitorService
+        run: dotnet publish ./src/WebMonitorService -c Release -r win-x64 --self-contained true -o ./publish/WebMonitorService
+
+      # Package artifacts
+      - name: Zip Artifacts
+        run: |
+          Compress-Archive -Path ./publish/* -DestinationPath ./artifacts.zip
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: devops-assignment-artifacts
+          path: ./artifacts.zip

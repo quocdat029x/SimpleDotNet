@@ -1,0 +1,37 @@
+# Ensure consistent line endings across OS
+* text=auto
+
+# Force LF for source code files (recommended for cross-platform builds)
+*.sh text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.ps1 text eol=lf
+
+# Keep CRLF for Windows batch scripts
+*.cmd text eol=crlf
+*.bat text eol=crlf
+
+# Treat C#, Razor, JSON, and config files as text
+*.cs text
+*.cshtml text
+*.json text
+*.config text
+*.xml text
+
+# Ignore binary files
+*.dll binary
+*.exe binary
+*.pdb binary
+*.zip binary
+*.nupkg binary
+*.snupkg binary
+
+# Prevent Git from attempting to diff these files
+*.lock binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+
+# Explicitly handle Dockerfile
+Dockerfile text eol=lf

@@ -1,0 +1,66 @@
+# Build artifacts
+bin/
+obj/
+publish/
+publish_service/
+artifacts.zip
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code / Visual Studio
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+logs/
+status_log.txt
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.cache
+
+# IIS temporary
+[Cc]ache/
+[Cc]omponentModelCache/
+
+# Docker
+*.pid
+*.tar
+docker-compose.override.yml
+
+# NuGet packages
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+
+# Build results
+project.lock.json
+project.fragment.lock.json
+
+# Test results
+TestResults/
+*.coverage
+*.coveragexml
+
+# OS-specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# Publish profiles (optional, if auto-generated)
+*.pubxml
+*.publishproj
+
+# Rider/JetBrains
+.idea/
+*.iml
